@@ -1,0 +1,20 @@
+@import "../../styles/variables";
+@import "../../styles/global";
+@import "../../styles/functions";
+
+.sub-title {
+  font-size: $fontSizeMedium;
+  font-weight: $regular;
+}
+.main {
+  // padding: calcRem(48px);
+  @include media-breakpoint-down(sm) {
+    padding: 0;
+  }
+  flex: 5;
+
+  .title {
+    font-size: $fontSizeMedium;
+    font-weight: $bold;
+  }
+}

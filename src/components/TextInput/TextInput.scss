@@ -1,0 +1,36 @@
+@import "./../../styles/variables";
+@import "./../../styles/functions";
+
+.text-input-container {
+  border: none;
+  width: 100%;
+
+  .form-label {
+    font-size: $fontSizeSmall;
+    padding-left: calcRem(5px);
+  }
+
+  .form-control {
+    width: 100%;
+    height: calcRem(60px);
+    border: thin solid transparent;
+    color: $darkgrey;
+    border-radius: calcRem(30px);
+  }
+
+  .error {
+    border: thin solid red;
+  }
+
+  .error-lbl {
+    color: red;
+  }
+
+  .white {
+    background-color: $white;
+  }
+
+  .grey {
+    background-color: $midgrey;
+  }
+}

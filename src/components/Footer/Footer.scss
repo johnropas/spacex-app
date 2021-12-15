@@ -1,0 +1,44 @@
+@import "./../../styles/variables";
+@import "./../../styles/functions";
+
+.footer {
+  min-height: 30vh;
+  background-color: $white;
+  border-top: solid calcRem(9px) $orange;
+  padding: calcRem(48px);
+  font-size: calcRem(15px);
+  @include media-breakpoint-down(md) {
+    // padding: calcRem(20px);
+    display: none;
+  }
+
+  &-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: calcRem(40px);
+    &__scroll {
+      display: flex;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.footer-link {
+  color: $darkgrey;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: $orange;
+}
+
+.padding-bottom {
+  padding-bottom: calcRem(16px);
+  @include media-breakpoint-down(sm) {
+    padding-bottom: calcRem(5px);
+  }
+}
+
+

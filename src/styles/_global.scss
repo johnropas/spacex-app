@@ -1,0 +1,75 @@
+@import "variables";
+@import "functions";
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  cursor: pointer;
+}
+
+.cursor-pointer {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.text-orange {
+  color: $orange;
+}
+
+.text-small {
+  font-size: $fontSizeExtraSmall;
+}
+
+.text-grey-tiny {
+  color: $bordergrey;
+  font-weight: $bold;
+  font-size: calcRem(12px);
+}
+
+.font-size-title {
+  font-size: $fontSizeMedium;
+}
+
+.font-bold {
+  font-weight: $bold;
+}
+
+.font-small {
+  font-size: $fontSizeExtraSmall!important;
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  box-shadow: none!important;
+  outline: 0!important;
+}
+
+h1, h2, h3, h4, h5, p {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-decoration {
+  text-decoration: none;
+}
+
+.container-fluid {
+  padding: 0 !important;
+}
+
+li {
+  list-style: none;
+}
+
+.sr-only {
+  display: none;
+}
