@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Navigation Component 1`] = `
+<div
+  className="navigation"
+>
+  <div
+    className="navbar"
+  >
+    <div
+      className="navbar-container container"
+    >
+      <a
+        aria-current="page"
+        className="navbar-logo active"
+        href="/"
+        onClick={[Function]}
+        style={Object {}}
+      />
+      <div
+        className="menu"
+      >
+        <ul
+          className="menu-list"
+        >
+          <a
+            aria-current="page"
+            className="menu-link active"
+            href="/"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <li
+              className="menu-item"
+            >
+              <div
+                className="menu-item-wrapper"
+              >
+                <span
+                  className="menu-text"
+                >
+                  HOME
+                </span>
+              </div>
+            </li>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders View Component 1`] = `
+<div>
+  <div
+    className=""
+  >
+    <div
+      className=""
+    >
+      <div
+        className="no-padding"
+      >
+        <div
+          className="main"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
