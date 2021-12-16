@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import App from './App';
+import Home from './Home';
 
-test('renders App', () => {
-  const component = render(<App />);
+test('renders Home page', () => {
+  const component = render(<Home />);
   expect(component).toMatchSnapshot();
 });

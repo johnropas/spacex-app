@@ -9,9 +9,7 @@ import {
 } from '../types/Launch';
 
 import { RootState } from '../store/configureStore';
-import { getCustomerID, isAuthCookieValid } from '../helpers/functions';
-import { authLogin } from './Auth';
-import { getStock } from '../api/LaunchApi';
+import { getLaunches } from '../api/LaunchApi';
 
 export function fetchLaunchesRequest(): LaunchActionTypes {
   return {
@@ -21,13 +19,14 @@ export function fetchLaunchesRequest(): LaunchActionTypes {
 }
 
 export function fetchLaunchesResponse(
-  stock: Launch,
+  launches: Launch[],
 ): LaunchActionTypes {
   return {
     type: FETCH_LAUNCHES_RESPONSE,
-    payload: stock,
+    payload: launches,
   };
 }
+
 
 export function fetchLaunchesFailure(): LaunchActionTypes {
   return {
@@ -39,15 +38,11 @@ export function fetchLaunchesFailure(): LaunchActionTypes {
 export const fetchLaunches = ():
 ThunkAction<void, RootState, unknown, Action<string>> =>
   async (dispatch) => {
-    dispatch(fetchStockRequest());
-    if (!isAuthCookieValid()) {
-      await dispatch(authLogin());
-    }
-    const finalCustomerId = getCustomerID() || '';
-    const asyncResp: any = await getStock(finalCustomerId, sku, 30, width1, '1');
+    dispatch(fetchLaunchesRequest());
+    const asyncResp: any = await getLaunches();
     if (asyncResp.status === 200) {
-      await dispatch(fetchStockResponse(asyncResp.data));
+      await dispatch(fetchLaunchesResponse(asyncResp.data));
     } else {
-      await dispatch(fetchStockFailure());
+      await dispatch(fetchLaunchesFailure());
     }
   };

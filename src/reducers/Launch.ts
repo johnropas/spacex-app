@@ -1,42 +1,42 @@
 import {
-  FETCH_STOCK_REQUEST,
-  FETCH_STOCK_RESPONSE,
-  FETCH_STOCK_FAILURE,
-  StockState,
-  StockActionTypes,
+  FETCH_LAUNCHES_REQUEST,
+  FETCH_LAUNCHES_RESPONSE,
+  FETCH_LAUNCHES_FAILURE,
+  LaunchState,
+  LaunchActionTypes,
 } from '../types/Launch';
 
-const initialState: StockState = {
-  stock: null,
-  isFetchingStock: false,
-  fetchingStockFailed: false,
+const initialState: LaunchState = {
+  launches: [],
+  isFetchingLaunches: false,
+  fetchingLaunchesFailed: false,
 };
 
 const stockReducer = (
   state = initialState,
-  action: StockActionTypes,
-): StockState => {
+  action: LaunchActionTypes,
+): LaunchState => {
   switch (action.type) {
-    case FETCH_STOCK_REQUEST:
+    case FETCH_LAUNCHES_REQUEST:
       return {
         ...state,
-        stock: null,
-        isFetchingStock: true,
-        fetchingStockFailed: false,
+        launches: [],
+        isFetchingLaunches: true,
+        fetchingLaunchesFailed: false,
       };
-    case FETCH_STOCK_RESPONSE:
+    case FETCH_LAUNCHES_RESPONSE:
       return {
         ...state,
-        stock: action.payload || null,
-        isFetchingStock: false,
-        fetchingStockFailed: false,
+        launches: action.payload || [],
+        isFetchingLaunches: false,
+        fetchingLaunchesFailed: false,
       };
-    case FETCH_STOCK_FAILURE:
+    case FETCH_LAUNCHES_FAILURE:
       return {
         ...state,
-        stock: null,
-        isFetchingStock: false,
-        fetchingStockFailed: true,
+        launches: [],
+        isFetchingLaunches: false,
+        fetchingLaunchesFailed: true,
       };
     default:
       return state;

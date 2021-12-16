@@ -1,9 +1,9 @@
 import { RootState } from '../store/configureStore';
 
-export const getStock = (state: RootState) => state?.stock?.stock;
+export const getLaunches = (state: RootState) => state?.launch?.launches;
 
-export const isFetchingStock = (state: RootState) =>
-  state?.stock?.isFetchingStock;
+export const isFetchingLaunches = (state: RootState) =>
+  state?.launch?.isFetchingLaunches;
 
-export const didFetchingStockFailed = (state: RootState) =>
-  state?.stock?.fetchingStockFailed;
+export const didFetchingLaunchesFailed = (state: RootState) =>
+  state?.launch?.fetchingLaunchesFailed;
